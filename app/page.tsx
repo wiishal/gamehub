@@ -11,11 +11,11 @@ export default function Home() {
     <div className="w-full min-h-screen bg-white font-mono selection:bg-pink-200 text-black overflow-x-hidden scroll-smooth">
       {/* SECTION 1: HERO (THE DESKTOP) */}
       <section className="relative w-full h-screen overflow-hidden border-b-4 border-black">
-        
         {/* Main Title - Responsive sizing */}
         <div className="absolute top-6 left-6 md:top-10 md:left-10 z-50 pointer-events-none">
           <h1 className="text-5xl md:text-8xl font-black text-black uppercase leading-[0.8]">
-            GAME<br />
+            GAME
+            <br />
             <span className="text-pink-500">HUB</span>
           </h1>
           <div className="mt-2 bg-black text-white px-2 py-1 inline-block text-[10px] font-bold">
@@ -24,7 +24,7 @@ export default function Home() {
         </div>
 
         {/* --- FLOATING ASSETS --- */}
-        
+
         {/* Sun - Top Right */}
         <img
           src="/rafabansi-sun-15710.gif"
@@ -71,9 +71,15 @@ export default function Home() {
         {/* Swipe Up Indicator - Centered at bottom */}
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center animate-bounce">
           <div className="bg-amber-400 border-2 border-black p-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <img src="/swipeup.gif" alt="swipe" className="h-8 md:h-12 w-auto" />
+            <img
+              src="/swipeup.gif"
+              alt="swipe"
+              className="h-8 md:h-12 w-auto"
+            />
           </div>
-          <span className="text-[8px] font-black mt-1 bg-white px-1 border border-black">SCROLL</span>
+          <span className="text-[8px] font-black mt-1 bg-white px-1 border border-black">
+            SCROLL
+          </span>
         </div>
 
         {/* Background Grid */}
@@ -88,11 +94,18 @@ export default function Home() {
         {/* Bottom Taskbar */}
         <div className="absolute bottom-0 w-full h-10 border-t-4 border-black bg-white flex items-center px-4 justify-between text-[10px] md:text-[12px] font-bold z-50">
           <div className="flex gap-4 md:gap-6">
-            <span className="cursor-pointer hover:text-pink-500 underline decoration-2">START</span>
-            <span className="hidden sm:inline text-neutral-400">D:\GAMES\HUB</span>
+            <span className="cursor-pointer hover:text-pink-500 underline decoration-2">
+              START
+            </span>
+            <span className="hidden sm:inline text-neutral-400">
+              D:\GAMES\HUB
+            </span>
           </div>
           <div className="tabular-nums">
-            {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+            {new Date().toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
           </div>
         </div>
       </section>
@@ -129,8 +142,12 @@ export default function Home() {
           ))}
         </div>
 
-        <footer className="mt-20 text-[10px] text-neutral-400 uppercase font-bold">
-          [ End of Directory ] — 2026 GameHub.sys
+        <footer className="mt-20 text-[10px] text-neutral-400 uppercase font-bold flex items-center gap-2 flex-col">
+          <div>[ End of Directory ] — 2026 GameHub.sys</div>
+          <div>
+            [© {new Date().getFullYear()} Vishal Nanaware. All rights reserved
+            ]
+          </div>
         </footer>
       </section>
     </div>
