@@ -1,10 +1,29 @@
+"use client";
 import React from "react";
 
 export default function Home() {
   const myGames = [
-    { id: 1, title: "CYBER_RUNNER", desc: "8-bit platformer" },
-    { id: 2, title: "PIXEL_QUEST", desc: "Retro RPG adventure" },
-    { id: 3, title: "VOID_VOID", desc: "Space survival" },
+    {
+      id: 1,
+      title: "CHICKEN_INVADERS",
+      desc: "Shooter",
+      link: "https://wiishal.github.io/chickenInvader/",
+      gif: "/cigameplay.gif",
+    },
+    {
+      id: 2,
+      title: "PIXEL_QUEST",
+      desc: "Retro RPG adventure",
+      link: "https://wiishal.github.io/pixelQuest/",
+      gif: "",
+    },
+    {
+      id: 3,
+      title: "VOID_VOID",
+      desc: "Space survival",
+      link: "https://wiishal.github.io/voidVoid/",
+      gif: "",
+    },
   ];
 
   return (
@@ -101,12 +120,6 @@ export default function Home() {
               D:\GAMES\HUB
             </span>
           </div>
-          <div className="tabular-nums">
-            {new Date().toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          </div>
         </div>
       </section>
 
@@ -126,8 +139,19 @@ export default function Home() {
               key={game.id}
               className="group border-4 border-black bg-white p-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer flex flex-col"
             >
-              <div className="w-full h-40 bg-neutral-100 mb-4 border-2 border-black flex items-center justify-center text-neutral-400 group-hover:bg-pink-100 transition-colors uppercase font-bold text-xs">
-                {game.title}_PREVIEW
+              {/* Game Image */}
+              <div className="w-full  bg-neutral-100 mb-4 border-2 border-black flex items-center justify-center text-neutral-400 group-hover:bg-pink-100 transition-colors uppercase font-bold text-xs">
+                {game.gif ? (
+                  <img
+                    src={game.gif}
+                    alt={game.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="h-[100%] flex items-center justify-center p-2">
+                    {game.title}_PREVIEW
+                  </div>
+                )}
               </div>
               <h3 className="font-black text-lg md:text-xl uppercase italic">
                 {game.title}
@@ -135,7 +159,13 @@ export default function Home() {
               <p className="text-[10px] mt-2 text-neutral-500 uppercase leading-tight font-bold flex-grow">
                 {game.desc}
               </p>
-              <button className="mt-6 w-full py-2 bg-black text-white font-bold text-xs md:text-sm uppercase hover:bg-pink-500 transition-colors">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(game.link, "_blank");
+                }}
+                className="mt-6 w-full py-2 bg-black text-white font-bold text-xs md:text-sm uppercase hover:bg-pink-500 transition-colors"
+              >
                 Initialize
               </button>
             </div>
@@ -145,8 +175,7 @@ export default function Home() {
         <footer className="mt-20 text-[10px] text-neutral-400 uppercase font-bold flex items-center gap-2 flex-col">
           <div>[ End of Directory ] — 2026 GameHub.sys</div>
           <div>
-            [© {new Date().getFullYear()} Vishal Nanaware. All rights reserved
-            ]
+            [© {new Date().getFullYear()} Vishal Nanaware. All rights reserved ]
           </div>
         </footer>
       </section>
