@@ -2,6 +2,7 @@
 import GifComp from "@/component/gifComp";
 import GameCard from "../component/gameCard";
 import UpcomingGameCard from "../component/upcomingGameCard";
+import MobileGameCard from "@/component/mobileGameCard";
 
 export default function Home() {
   return (
@@ -63,6 +64,13 @@ export default function Home() {
         {/*Game Card Section & Grid */}
         <div className="text-3xl md:text-4xl font-black mb-22">
           <GameCard />
+        </div>
+
+         <h2 className="text-3xl md:text-4xl font-black mb-12 bg-black text-white px-4 py-2 self-start rotate-[-1deg] shadow-[4px_4px_0px_0px_rgba(236,72,153,1)] uppercase">
+          Mobile_Games.bat
+        </h2>
+        <div className="text-3xl md:text-4xl font-black mb-22">
+          <MobileGameCard />
         </div>
 
         <h2 className="text-3xl md:text-4xl font-black mb-12 bg-black text-white px-4 py-2 self-start rotate-[-1deg] shadow-[4px_4px_0px_0px_rgba(236,72,153,1)] uppercase">

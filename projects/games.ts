@@ -8,7 +8,15 @@ export const myGames = [
   },
 ];
 
-
+export const mobileGames=[
+  {
+    id:'m1',
+    title: "FREE_BALLOON",
+    desc:"ENDLESS RUNNER",
+    link:'https://free-balloon.netlify.app/',
+    gif:'/freeballoon.gif'
+  }
+]
 export const upcomingGames = [
   {
     id: 'u1',
